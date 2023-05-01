@@ -1,16 +1,16 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>La Delicica</title>
+
+    <link rel="stylesheet" href="style.css">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <!-- Enlace para los íconos de Font Awesome -->
     <script src="https://kit.fontawesome.com/15feb8d600.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -32,85 +32,18 @@
         </div>
     </div>
 
-    <!-- Navbar -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-light navbar-transparent navbar-dark fixed-top d-block pt-0 pb-0 h-auto">
-        <div class="container-fluid nav-top position-relative bg-danger py-1">
-            <div class="container bg-transparent d-flex gap-4 text-light">
-                <div>
-                    <i class="fa-solid fa-phone-volume"></i>
-                    <span>123-456-7890</span>
-                </div>
-                <div>
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>info@ladelicia.com</span>
-                </div>
-            </div>
-        </div>
-        <div class="container nav-content position-relative py-1">
-            <a class="navbar-brand" href="#">La Delicia</a>
-            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="navbar-collapse collapse" id="navbarNav">
-                <ul class="navbar-nav text-white ">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#menu">Nuestra carta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Locales</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#history">Nuestra historia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Reservaciones</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Header  -->
+    <header id="header"></header>
 
     <!-- Contenido principal -->
     <main id="main" class="container-fluid">
         <section id="menu" class="container my-5 menu">
-            <h2>Menú recomendado</h2>
-            <div class="row pt-4">
-                <div class="col-md-4">
-                    <div class="card mb-3">
-                        <img src="img/lomo.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Tallarines con Lomo saltado</h5>
-                            <p class="card-text">Tallarines salteados o a la huancaina con lomo de pollo, carne o verduras
-                            </p>
-                            <a href="#" class="btn btn-primary">Ordenar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-3">
-                        <img src="img/pachamanca.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Pachamanca 5 sabores</h5>
-                            <p class="card-text">Con carne de chancho, pollo, cordero, mariscos o combinados</p>
-                            <a href="#" class="btn btn-primary">Ordenar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-3">
-                        <img src="img/trio-marino.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Trío marino</h5>
-                            <p class="card-text">Ceviche de pescado, arroz con mariscos y chicharrón mixto</p>
-                            <a href="#" class="btn btn-primary">Ordenar</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="head d-flex gap-3 pb-4">
+                <h2>Menú recomendado</h2>
+                <a class="btn btn-success d-flex align-items-center" href="./menu.html" role="button">Ver carta completa</a>
+            </div>
+            <div class="row pt-4 content">
+                <!-- generate with JS -->
             </div>
         </section>
 
@@ -134,26 +67,48 @@
         </section>
     </main>
 
-    <!-- Pie de página -->
-    <footer id="footer" class="bg-dark py-4">
-        <div class="footer container d-flex align-items-center justify-content-between">
-            <div class="logo">
-                <img src="img/logo.png" alt="Logo">
-            </div>
-            <div class="text-center">
-                <p class="mb-0 text-white">&copy; 2023 Restaurante</p>
-                <p class="mb-0">
-                    <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-                </p>
-            </div>
-            <div></div> <!-- Espacio en blanco a la derecha -->
-        </div>
-    </footer>
+    <!-- Footer  -->
+    <footer id="footer"></footer>
+
 
     <!-- SCRIPTS -->
-    <script src="js/main.js" defer></script>
+    <script src="./js/LoadTemplates.js"></script>
+    
+    <script type="module" defer>
+        import { loadJSON } from './js/DataFunctions.js'
+
+        showMenus();
+
+        async function showMenus(){
+            const data =  await loadJSON();
+            console.log(data);
+
+            const menuSection = document.getElementById("menu");
+            const menuContent = menuSection.querySelector(".content");
+            let counter = 0;
+
+            data.forEach(menu => {
+                if (counter < 3){
+                    menuContent.innerHTML += `
+                        <div class="col-md-4">
+                            <div class="card mb-5">
+                                <img src="${menu.image}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">${menu.name}</h5>
+                                    <p class="card-text">${menu.description}</p>                                    
+                                </div>
+                                <div class="card-footer d-flex justify-content-between align-items-center">
+                                    <h2 class="card-text text-primary my-auto">$ ${menu.price}</h2>
+                                    <a href="#" class="btn btn-primary">Ordenar</a>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    counter++;
+                }
+            });
+        }
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
