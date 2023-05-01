@@ -16,26 +16,6 @@
   position: relative;
 }
 
-#navbarNav {
-  justify-content: flex-end;
-}
-.navbar {
-  z-index: 1;
-}
-.nav-top span{
-  font-size: 0.85rem;
-}
-.nav-top span {
-  padding-right: 1rem;
-}
-.nav-item{
-  padding: 0 1rem;
-}
-.navbar-scrolled {
-  background-color: rgba(0, 0, 0, 0.8);
-  transition: background-color 0.3s ease-in-out;
-}
-
 .carousel-item::before {
   content: "";
   position: absolute;
@@ -49,9 +29,7 @@
 .menu .card img{
   height: 220px;
 }
-
-.footer .logo img{
-  width: 200px;
-  background-color: rgb(75, 75, 75);
-  border-radius: 10px;
+.menu .card{
+  height: 500px;
+  overflow: hidden;
 }

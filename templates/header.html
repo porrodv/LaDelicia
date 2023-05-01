@@ -1,0 +1,64 @@
+<style>
+    #navbarNav {
+        justify-content: flex-end;
+    }
+    .navbar {
+        z-index: 1;
+    }
+    .nav-top span {
+        font-size: 0.85rem;
+    }
+    .nav-top span {
+        padding-right: 1rem;
+    }
+    .nav-item {
+        padding: 0 1rem;
+    }
+    .navbar-scrolled {
+        background-color: rgba(0, 0, 0, 0.8);
+        transition: background-color 0.3s ease-in-out;
+    }
+</style>
+
+<nav id="navbar"
+    class="navbar navbar-expand-lg navbar-light navbar-transparent navbar-dark fixed-top d-block pt-0 pb-0 h-auto">
+    <div class="container-fluid nav-top position-relative bg-danger py-1">
+        <div class="container bg-transparent d-flex gap-4 text-light">
+            <div>
+                <i class="fa-solid fa-phone-volume"></i>
+                <span>123-456-7890</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-envelope"></i>
+                <span>info@ladelicia.com</span>
+            </div>
+        </div>
+    </div>
+    <div class="container nav-content position-relative py-1">
+        <a class="navbar-brand" href="./index.html">La Delicia</a>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="navbarNav">
+            <ul class="navbar-nav text-white ">
+                <li class="nav-item">
+                    <a class="nav-link" href="#menu">Nuestra carta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Locales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#history">Nuestra historia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Reservaciones</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

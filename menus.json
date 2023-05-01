@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Tallarines con Lomo saltado",
+    "description": "Tallarines salteados con trozos de filete de res, cebolla, tomate, ají amarillo y papas fritas.",
+    "price": 19.99,
+    "image": "./img/lomo.png"
+  },
+  {
+    "name": "Pachamanca 5 sabores",
+    "description": "Preparados con carnes de cerdo, pollo, cordero y alpaca, sazonado con hierbas aromáticas y cocido a la leña. Acompañado con papas y choclo.",
+    "price": 89.99,
+    "image": "./img/pachamanca.png"
+  },
+  {
+    "name": "Trío Marino",
+    "description": "Selección de platillos marinos peruanos que incluye ceviche de pescado fresco, arroz con mariscos y chicharrón mixto. Acompañado con salsa criolla.",
+    "price": 59.99,
+    "image": "./img/trio-marino.png"
+  },
+  {
+    "name": "Ají de Gallina",
+    "description": "Pollo deshilachado en una cremosa y picante salsa amarilla hecha con ají amarillo, leche, pan y nueces. Servido con papas cocidas y arroz.",
+    "price": 17.99,
+    "image": "https://cocinalocal.cl/wp-content/uploads/2022/11/Aji-de-Gallina-Peruano.jpeg"
+  },
+  {
+    "name": "Causa Rellena",
+    "description": "Terrina de papa rellena de ensalada de pollo o atún, aguacate y huevo duro. Servida con lechuga, papas cocidas y salsa de ají amarillo.",
+    "price": 15.99,
+    "image": "https://i0.wp.com/comidasdelperu.com/wp-content/uploads/2021/06/Receta-de-Causa-Rellena-Paso-a-paso-1.jpg?fit=1280%2C720&ssl=1"
+  },
+  {
+    "name": "Tacu Tacu con Lomo Saltado",
+    "description": "Tortilla de arroz y frijoles cubierta con tiras salteadas de carne de res, cebolla, tomate y papas fritas. Servido con salsa criolla.",
+    "price": 22.99,
+    "image": "https://img-global.cpcdn.com/recipes/d494972755b95ef9/1200x630cq70/photo.jpg"
+  },
+  {
+    "name": "Seco de Cordero",
+    "description": "Tierno muslo de cordero cocido en una salsa a base de cilantro, servido con frijoles canarios y arroz.",
+    "price": 25.99,
+    "image": "https://img-global.cpcdn.com/recipes/7b309e5f07ea5302/1200x630cq70/photo.jpg"
+  },
+  {
+    "name": "Chaufa de Mariscos",
+    "description": "Arroz frito al estilo peruano con mariscos variados, huevos y cebolla verde. Servido con salsa de soja y salsa criolla.",
+    "price": 21.99,
+    "image": "https://www.comedera.com/wp-content/uploads/2022/02/arroz-chaufa-de-mariscos.jpg"
+  }
+]
