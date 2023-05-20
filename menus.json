@@ -3,19 +3,19 @@
     "name": "Tallarines con Lomo saltado",
     "description": "Tallarines salteados con trozos de filete de res, cebolla, tomate, ají amarillo y papas fritas.",
     "price": 19.99,
-    "image": "/img/lomo.png"
+    "image": "./img/lomo.png"
   },
   {
     "name": "Pachamanca 5 sabores",
     "description": "Preparados con carnes de cerdo, pollo, cordero y alpaca, sazonado con hierbas aromáticas y cocido a la leña. Acompañado con papas y choclo.",
     "price": 89.99,
-    "image": "/img/pachamanca.png"
+    "image": "./img/pachamanca.png"
   },
   {
     "name": "Trío Marino",
     "description": "Selección de platillos marinos peruanos que incluye ceviche de pescado fresco, arroz con mariscos y chicharrón mixto. Acompañado con salsa criolla.",
     "price": 59.99,
-    "image": "/img/trio-marino.png"
+    "image": "./img/trio-marino.png"
   },
   {
     "name": "Ají de Gallina",

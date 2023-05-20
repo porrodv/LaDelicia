@@ -6,7 +6,7 @@
 
 
 .containerPrincipal{
-    background-image: url('/img/rest1.png');
+    background-image: url('../img/rest1.png');
     background-color: rgba(0, 0, 0, 0.5);
 
     display: flex;

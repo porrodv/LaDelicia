@@ -8,7 +8,7 @@ function loadContent() {
   let headerRequest = new XMLHttpRequest();
   let footerRequest = new XMLHttpRequest();
 
-  headerRequest.open("GET", "/templates/header.html", false);
+  headerRequest.open("GET", "./templates/header.html", false);
   headerRequest.onreadystatechange = function () {
     if (headerRequest.readyState === 4) {
       if (headerRequest.status === 200 || headerRequest.status === 0) {
@@ -18,7 +18,7 @@ function loadContent() {
   };
   headerRequest.send(null);
 
-  footerRequest.open("GET", "/templates/footer.html", false);
+  footerRequest.open("GET", "./templates/footer.html", false);
   footerRequest.onreadystatechange = function () {
     if (footerRequest.readyState === 4) {
       if (footerRequest.status === 200 || footerRequest.status === 0) {
