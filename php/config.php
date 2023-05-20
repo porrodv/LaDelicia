@@ -2,7 +2,7 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "kkdvak123";
+$password = "password"; // personal pass
 $dbname = "ladelicia";
 
 function conectar() {
