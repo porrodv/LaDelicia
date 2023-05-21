@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,7 +42,8 @@
         <section id="menu" class="container menu">
             <div class="head d-flex gap-3 pb-4">
                 <h2>Menú recomendado</h2>
-                <a class="btn btn-success d-flex align-items-center" href="./menu.html" role="button">Ver carta completa</a>
+                <a class="btn btn-success d-flex align-items-center" href="./menu.html" role="button">Ver carta
+                    completa</a>
             </div>
             <div class="row pt-4 content">
                 <!-- generate with JS -->
@@ -56,11 +58,14 @@
                     </div>
                     <div class="col-md-6">
                         <h2 class="mb-3">Nuestra Historia</h2>
-                        <p>En el año 2018, abrimos las puertas de nuestro restaurante con el objetivo de ofrecer a nuestros
+                        <p>En el año 2018, abrimos las puertas de nuestro restaurante con el objetivo de ofrecer a
+                            nuestros
                             clientes una experiencia gastronómica única, basada en ingredientes de alta calidad y en la
                             pasión por la cocina.</p>
-                        <p>A lo largo de los años, hemos ido evolucionando y mejorando gracias a las sugerencias y el apoyo
-                            de nuestros clientes. Hoy en día, nuestro restaurante es un referente en la ciudad gracias a la
+                        <p>A lo largo de los años, hemos ido evolucionando y mejorando gracias a las sugerencias y el
+                            apoyo
+                            de nuestros clientes. Hoy en día, nuestro restaurante es un referente en la ciudad gracias a
+                            la
                             excelencia de nuestros platos y a la calidad de nuestro servicio.</p>
                         <a class="btn btn-secondary" href="./history.html" role="button">Leer más</a>
                     </div>
@@ -75,14 +80,14 @@
 
     <!-- SCRIPTS -->
     <script src="./js/LoadTemplates.js"></script>
-    
+
     <script type="module" defer>
-        import { loadJSON } from './js/DataFunctions.js'
+        import { getData } from './js/DataFunctions.js'
 
         showMenus();
 
-        async function showMenus(){
-            const data =  await loadJSON();
+        async function showMenus() {
+            const data = await getData('./php/db_get_products.php');
             console.log(data);
 
             const menuSection = document.getElementById("menu");
@@ -90,17 +95,17 @@
             let counter = 0;
 
             data.forEach(menu => {
-                if (counter < 3){
+                if (counter < 3) {
                     menuContent.innerHTML += `
                         <div class="col-md-4">
                             <div class="card mb-5">
-                                <img src="${menu.image}" class="card-img-top" alt="...">
+                                <img src="${menu.imagen}" class="card-img-top" alt="...">
                                 <div class="card-body">
-                                    <h5 class="card-title">${menu.name}</h5>
-                                    <p class="card-text">${menu.description}</p>                                    
+                                    <h5 class="card-title">${menu.nombre}</h5>
+                                    <p class="card-text">${menu.descripcion}</p>                                    
                                 </div>
                                 <div class="card-footer d-flex justify-content-between align-items-center">
-                                    <h2 class="card-text text-primary my-auto">$ ${menu.price}</h2>
+                                    <h2 class="card-text text-primary my-auto">$ ${menu.precio}</h2>
                                     <a href="#" class="btn btn-primary">Ordenar</a>
                                 </div>
                             </div>

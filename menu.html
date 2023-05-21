@@ -33,7 +33,7 @@
                 <!-- generate with JS -->
             </div>
         </section>
-    </div>
+    </main>
 
     <footer id="footer"></footer>
     
@@ -41,12 +41,12 @@
     <script src="./js/LoadTemplates.js"></script>
 
     <script type="module" defer>
-        import { loadJSON } from './js/DataFunctions.js'
+        import { getData } from './js/DataFunctions.js'
 
         showMenus();
 
         async function showMenus(){
-            const data =  await loadJSON();
+            const data =  await getData("./php/db_get_products.php");
             console.log(data);
 
             const menuSection = document.getElementById("menu");
@@ -56,13 +56,13 @@
                 menuContent.innerHTML += `
                     <div class="col-md-4">
                         <div class="card mb-5">
-                            <img src="${menu.image}" class="card-img-top" alt="...">
+                            <img src="${menu.imagen}" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title">${menu.name}</h5>
-                                <p class="card-text">${menu.description}</p>                                    
+                                <h5 class="card-title">${menu.nombre}</h5>
+                                <p class="card-text">${menu.descripcion}</p>                                    
                             </div>
                             <div class="card-footer d-flex justify-content-between align-items-center">
-                                <h2 class="card-text text-primary my-auto">$ ${menu.price}</h2>
+                                <h2 class="card-text text-primary my-auto">$ ${menu.precio}</h2>
                                 <a href="#" class="btn btn-primary">Ordenar</a>
                             </div>
                         </div>

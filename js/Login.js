@@ -1,11 +1,9 @@
 function login() {
-  var user, password;
-
-  user = document.getElementById("usuario").value;
-  password = document.getElementById("contraseña").value;
+  var user = document.getElementById("usuario").value;
+  var password = document.getElementById("contraseña").value;
 
   if (user == "admin" && password == "1234") {
-    window.location = "../admin/dashboard.html";
+    window.location = "./admin/dashboard.html";
   } else {
     alert("Datos incorrectos");
   }
