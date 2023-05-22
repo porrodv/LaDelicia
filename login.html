@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="./css/login.css">
-</head>
+</head> 
 <body>
     <div class="containerPrincipal">
-        <div class="form-group">
+        <form id="login-form" class="form-group" action="#">
             <h1>Login</h1>
             <br>
-            <input id="usuario" type="text" class="form-control" name="usern" placeholder="Usuario">
+            <input id="usuario" type="text" class="form-control" name="username" placeholder="Usuario">
             <input id="contraseña" type="password" name="password" class="form-control"   placeholder="Contraseña">
             <br>
-            <button id="boton" class="boton" onclick="login()">Iniciar Sesion</button>
-        </div>
+            <button id="login-btn" class="boton" type="submit">Iniciar Sesion</button>
+        </form>
     </div>
-    <script src="./js/Login.js"></script>
+    <script src="./js/Login.js" type="module" defer></script>
 </body>
 
 </html>

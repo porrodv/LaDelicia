@@ -10,50 +10,48 @@ async function getData(url) {
 }
 
 // testing
-async function giveData(url, method, dataObject = []) {
+async function putData(url, method, dataObject = []) {
   const token = await getTokenFromServer();
   const csrftoken = getCookie("csrftoken");
 
-  if (method === "PUT") {
-    try {
-      const response = await fetch(url, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer" + token,
-          "X-CSRFToken": csrftoken,
-        },
-        body: JSON.stringify(dataObject),
-      });
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
-  } else if (method === "POST") {
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: "Bearer" + token,
-          "X-CSRFToken": csrftoken,
-        },
-        body: JSON.stringify(dataObject),
-      });
-      const contentType = response.headers.get("content-type");
-
-      if (contentType && contentType.indexOf("application/json") !== -1) {
-        const data = await response.json();
-        return data;
-      } else {
-        const blob = await response.blob();
-        return blob;
-      }
-    } catch (error) {
-      console.log(error);
-    }
+  try {
+    const response = await fetch(url, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer" + token,
+        "X-CSRFToken": csrftoken,
+      },
+      body: JSON.stringify(dataObject),
+    });
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
   }
 }
 
-export { getData };
+async function postData(url, user, pass){
+  const data = {
+    username: user,
+    password: pass
+  };
+  console.log(JSON.stringify(data));
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const result = await response.json();
+    console.log(result);
+    
+  } catch (error) {
+    console.log("Error:", error);
+  }
+}
+
+export { getData, postData };
