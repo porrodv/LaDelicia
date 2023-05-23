@@ -34,21 +34,21 @@ async function putData(url, method, dataObject = []) {
 async function postData(url, user, pass){
   const data = {
     username: user,
-    password: pass
+    password: pass,
   };
-  console.log(JSON.stringify(data));
+  console.log("usuario enviado: ", data);
 
   try {
     const response = await fetch(url, {
       method: "POST",
-      headers: {
+      headers: {  
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
+
     const result = await response.json();
-    console.log(result);
-    
+    return result;    
   } catch (error) {
     console.log("Error:", error);
   }

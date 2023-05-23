@@ -18,8 +18,9 @@ function getProducts(){
         $json = json_encode($registros);
         return $json;
     } else {
-        return "Error en la consulta: " . mysqli_error($conn);
+        throw new Exception("Error en la consulta: " . mysqli_error($conn));
     }
+    mysqli_free_result($result);
     mysqli_close($conn);
 }
 echo getProducts();
