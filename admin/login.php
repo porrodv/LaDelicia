@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="./css/admin.css">
+<link rel="stylesheet" type="text/css" href="./css/login.css">
 <body class="bg">
 	<div style="padding-top:100px;"></div>
 
