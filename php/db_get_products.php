@@ -5,7 +5,7 @@ require_once("./db_connection.php");
 function getProducts(){
     $conn = connect();
 
-    $sql = "SELECT * FROM producto ORDER BY id ASC";
+    $sql = "SELECT * FROM menu ORDER BY id ASC";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
