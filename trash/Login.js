@@ -1,4 +1,4 @@
-import { postData } from "./DataFunctions.js";
+import { postData } from "../js/DataFunctions.js";
 
 document.getElementById('login-form').addEventListener('submit', login);
 

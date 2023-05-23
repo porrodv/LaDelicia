@@ -23,7 +23,6 @@ function verifyAdminAccount($user, $pass){
     mysqli_free_result($result);
     mysqli_close($conn);
 
-    $found = preg_replace('/^0x/', '', $found); // provisional
     return json_encode($found);
 }
 echo verifyAdminAccount($user, $pass);

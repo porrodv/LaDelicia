@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 .containerPrincipal{
     background-image: url('../img/rest1.png');
     background-color: rgba(0, 0, 0, 0.5);
@@ -32,7 +31,6 @@ input{
     font-size: 14px;
 }
 
-
 .boton{
     font-family: sans-serif;
     text-transform: uppercase;
@@ -47,7 +45,6 @@ input{
     transition: all 0.3 ease;
     cursor: pointer;
 }
-
 
 .form-group{
     display: flex;
