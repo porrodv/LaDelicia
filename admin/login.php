@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="./css/login.css">
-<body class="bg">
+<body class="background-image">
 	<div style="padding-top:100px;"></div>
 
 	<form action="loginck.php" method="post">
@@ -15,9 +15,8 @@
 				<td><input type="password" name="pass" value="" placeholder="Ingrese la contraseña" class="text" required></td>
 			</tr>
 			<tr align="center">
-				<td><input type="submit" name="s" value="Iniciar Sesion" class="btn"></td>
+				<td><input type="submit" name="s" value="Iniciar Sesion" class="button"></td>
 			</tr>
 		</table>
 	</form>
 </body>
-

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Delicia - Locales </title>
+
+    <link rel="stylesheet" href="./css/global.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <!-- Enlace para los íconos de Font Awesome -->
+    <script src="https://kit.fontawesome.com/15feb8d600.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main id="main" class="container-fluid">
+        <div class="contact-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <center>
+                            <img src="./img/Reservaciones.png">
+                        </center>
+                        <br>
+                        <div class="heading-title text-left">
+                            <p>Disfruta más reservando fácilmente en tu restaurante favorito.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Tu nombre" required data-error="Por favor ingrese su nombre">
+                                        <div class="help-block with-errors"></div>
+                                        <br>
+                                    </div>                                 
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="email" placeholder="Tu email" id="email" class="form-control" pattern=".+@gmail\.com" size="30" required data-error="Por favor ingrese su email">
+                                        <div class="help-block with-errors"></div>
+                                        <br>
+                                    </div> 
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="tel" placeholder="Tu telefono" id="phone" class="form-control" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{3}" required data-error="Por favor ingrese su numero telefonico">
+                                        <div class="help-block with-errors"></div>
+                                        <br>
+                                    </div> 
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="date" placeholder="Fecha" id="fecha" class="form-control" name="name" required data-error="Por favor ingrese la fecha">
+                                        <div class="help-block with-errors"></div>
+                                        <br>
+                                    </div> 
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="time" placeholder="Hora" id="horario" class="form-control" name="name" required data-error="Por favor ingrese el horario">
+                                        <div class="help-block with-errors"></div>
+                                        <br>
+                                    </div> 
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <select class="custom-select d-block form-control" id="guest" required data-error="Por favor seleccione el numero de personas">
+                                          <option disabled selected>Por favor seleccione el numero de personas*</option>
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                          <option value="4">4</option>
+                                          <option value="5">5</option>
+                                        </select>
+                                        <br>
+                                    </div> 
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group"> 
+                                        <textarea class="form-control" id="message" placeholder="Tu mensaje" rows="4" data-error="Escriba su mensaje" required></textarea>
+                                        <div class="help-block with-errors"></div>
+                                        <br><br>
+                                    </div>
+                                    <div class="submit-button text-center">
+                                        <button class="btn btn-common" id="submit" type="submit">Enviar reservacion</button>
+                                        <div id="msgSubmit" class="h3 text-center hidden"></div> 
+                                        <div class="clearfix"></div> 
+                                        <br><br>
+                                    </div>
+                                </div>
+                            </div>            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>     
+    </main>
+
+    <footer id="footer"></footer>
+
+    <!-- SCRIPTS -->
+    <script src="./js/LoadTemplates.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-.bg{
+.background-image {
     background-image: url('../../img/rest1.png');
     background-position: center center;
     background-repeat: no-repeat;
@@ -14,14 +14,14 @@
 
 .text{
     padding: 13px;
-    background-color: darkblue;
+    background-color: darkblue; /* Usando un valor hexadecimal para un color azul oscuro */
     color: white;
     width: 80%;
     border-radius: 10px;
     font-weight: bold;
 }
 
-.btn{
+.button{
     color: white;
     background-color: green;
     border: 0px;

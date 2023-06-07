@@ -4,3 +4,15 @@
 #main{
   margin-top: 7rem !important;
 }
+
+.btn.btn-common{
+	color: #d65106;
+	background-color: transparent;
+	background-image: none;
+	border-color: #d65106;
+}
+.btn.btn-common:hover{
+	color: #ffffff;
+	background-color: #333333;
+	border-color: #333333;
+}

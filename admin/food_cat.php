@@ -1,5 +1,5 @@
 <?php include "./templates/header.php"; ?>
-<link rel="stylesheet" type="text/css" href=".css/admin.css">
+<link rel="stylesheet" type="text/css" href="./css/admin.css">
 <div class="content">
 	<form action="" method="post">
 		<table border=0 align="center" bgcolor="white" width="40%" style="box-shadow: 1px 3px 15px 2px;"
