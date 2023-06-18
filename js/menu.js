@@ -1,3 +1,4 @@
+'use strict';
 import { getData } from "./DataFunctions.js";
 
 Promise.all([showMenus()]).then(() => {
