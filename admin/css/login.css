@@ -1,33 +1,36 @@
-.background-image {
+body {
     background-image: url('../../img/rest1.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.title{
-    color: red;
-    font-family: sans-serif;
-    font-size: 1.7em;
-    font-weight: bold;
+.login {
+    width: 360px;
+    height: min-content;
+    padding: 20px;
+    border-radius: 12px;
+    background: #ffffff;
 }
 
-.text{
-    padding: 13px;
-    background-color: darkblue; /* Usando un valor hexadecimal para un color azul oscuro */
-    color: white;
-    width: 80%;
-    border-radius: 10px;
-    font-weight: bold;
+.login h1 {
+    font-size: 36px;
+    margin-bottom: 25px;
 }
 
-.button{
-    color: white;
-    background-color: green;
-    border: 0px;
-    box-shadow: 1px 3px 5px 2px;
-    width: 45%;
-    height: 38px;
-    font-size: 1.3em;
-    border-radius: 20px;
+.login form {
+    font-size: 20px;
+}
+
+.login form .form-group {
+    margin-bottom: 12px;
+}
+
+.login form input[type="submit"] {
+    font-size: 20px;
+    margin-top: 15px;
 }

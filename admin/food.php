@@ -1,93 +1,111 @@
+<!-- SCRIP -->
+
 <script>
 	function showUser(str) {
-		if (str == "") {
-			document.getElementById("txtHint").innerHTML = "";
-			return;
-		} else {
-			var xmlhttp = new XMLHttpRequest();
-			xmlhttp.onreadystatechange = function () {
-				if (this.readyState == 4 && this.status == 200) {
-					document.getElementById("txtHint").innerHTML = this.responseText;
-				}
-			};
-			xmlhttp.open("GET", "getscat.php?q=" + str, true);
-			xmlhttp.send();
-		}
+    	if (str == "") {
+        	document.getElementById("txtHint").innerHTML = "";
+        	return;
+    	} else {
+        	var xmlhttp = new XMLHttpRequest();
+        	xmlhttp.onreadystatechange = function () {
+            	if (this.readyState == 4 && this.status == 200) {
+                	document.getElementById("txtHint").innerHTML = this.responseText;
+            	}
+        	};
+        	xmlhttp.open("GET", "getscat.php?q=" + str, true);
+        	xmlhttp.send();
+    	}
 	}
 </script>
-<?php include "./templates/header.php"; ?>
 
-<link rel="stylesheet" type="text/css" href="./css/admin.css">
+<!-- DISEÑO DEL MODULO MENU - ADMINISTRADOR EN PHP -->
 
-<div class="content">
-	<form action="" method="post" enctype="multipart/form-data">
-		<table border=0 align="center" bgcolor="white" width="65%" style="box-shadow: 1px 3px 15px 2px;"
-			cellpadding="10" cellspacing="15">
+<?php
+include "connect.php"; 
+include('templates/header.php');
 
-			<tr align="center">
-				<td class="title">Registrar Nuevo Platillo</td>
-				<td><a href="view_food.php" style="color: red; text-decoration: underline;">VER TODOS LOS PLATILLOS</a>
-				</td>
-			</tr>
+?>
 
-			<tr align="center">
-				<td>Elegir la categoria</td>
-				<td>
-					<select class="text" name="cat" onchange="showUser(this.value)">
-						<option value="PLATILLO">PLATILLO</option>
-						<option value="BEBIDA">BEBIDA</option>
-					</select>
-				</td>
-			</tr>
+<div class="container-fluid px-4">
 
-			<tr align="center">
-				<td>Elegir la Subcategoria</td>
-				<td>
-					<div id="txtHint">Elija su categoría principal para mostrar la subcategoría</div>
-				</td>
-			</tr>
+    <div class = 'row mt-4'>
+        <div class = 'col-md-12'>
+            <div class ='card'>
+                <div class = 'card-header'>
+                    <h4>Registro de Comida
+                        <a href="view_food.php" class="btn btn-danger float-end">Atras</a>
+                    </h4>
+            </div>
+        <div class = "card-body">
 
-			<tr align="center">
-				<td> Ingresar Titulo</td>
-				<td><input type="text" name="title" value="" placeholder="" class="text" required></td>
-			</tr>
+        <form action ="" method ="post" enctype="multipart/form-data">
+            <div class ="row">
+                <div class ="col-md-12 mb-3">
+                    <label>Categoria</label>
+                    <select name = "cat" requiered class = "form-control" onchange="showUser(this.value)">
+                        <option disabled selected>--Seleccione la categoria--</option>
+                        <option value="PLATILLO">PLATILLO</option>
+                        <option value="BEBIDA">BEBIDA</option>
+                    </select>
+                </div>
+                <div class ="col-md-12 mb-3">
+                    <label>Subcategoria</label>
+                    <select name = "scat" requiered class = "form-control" id="txtHint" >
+                        <option disabled selected>--Selecciona su categoria principal para mostrar la subcategoria--</option>
+                    </select>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label>Ingrese el nombre de la comida</label>
+                    <input type ="text" name ="title" class ="form-control" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label>Ingrese el detalle de la comida</label>
+                    <textarea name ="detail" class ="form-control" rows="4" required></textarea>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label>Ingrese el precio de la comida</label>
+                    <input type ="text" name ="price" class ="form-control" required>
+                </div>
+                <div class="col-md-12 mb-3">
+                    <label>Ingrese la imagen de la comida</label>
+                    <input type ="File" name ="img" class ="form-control" required>
+                </div>
+                <div class ="col-md-12 mb-3">
+                    <button type = "submit" name="s" class ="btn btn-primary">Registrar</button>
+            </div>
+        </form>
 
-			<tr align="center">
-				<td> Ingrese el detalle de la comida </td>
-				<td><textarea rows="4" name="detail" cols="30" class="ar"
-						style="background-color: black; color: white; padding: 10px;" required></textarea></td>
-			</tr>
 
-			<tr align="center">
-				<td> Ingrese el precio de la comida </td>
-				<td> <input type="text" name="price" class="text" required> </td>
-			</tr>
+    
+	<!-- BASE DE DATOS - REGISTRO DE LOS PLATILLOS -->
 
-			<tr align="center">
-				<td> Introducir la imagen de comida </td>
-				<td><input type="File" name="img" placeholder="" class="" required></td>
-			</tr>
+        <?php
+        if (isset($_POST['s'])) { //evalua si la variable esta definida
+            $cat = $_POST['cat']; //envia la categoria
+            $scat = $_POST['scat']; //envia la sub categoria
+            $title = $_POST['title']; //envia el titulo
+            $det = $_POST['detail']; //envia el detalle
+            $price = $_POST['price']; //envia el precio
+            $i = "mimg/" . $_FILES['img']['name']; //envia la imagen
+            move_uploaded_file($_FILES['img']['tmp_name'], $i); //envia la imagen  la base de datos
+            include "connect.php"; //captura 
+            mysqli_query($con, "insert into menu (categoria,sub_categoria,nombre,descripcion,precio,imagen)
+            values('$cat','$scat','$title','$det','$price','$i')"); //llama a la base de datos
+            echo "<script>alert('Registrado correctamente');</script>"; //se registra el platillo
+        }
+        ?>
 
-			<tr>
-				<td colspan=2 align="center"> <input type="submit" name="s" value="Registrar" class="btn"> </td>
-			</tr>
-
-		</table>
-	</form>
-	<?php
-	if (isset($_POST['s'])) {
-		$cat = $_POST['cat'];
-		$scat = $_POST['scat'];
-		$title = $_POST['title'];
-		$det = $_POST['detail'];
-		$price = $_POST['price'];
-		$i = "mimg/" . $_FILES['img']['name'];
-		move_uploaded_file($_FILES['img']['tmp_name'], $i);
-		include "connect.php";
-		mysqli_query($con, "insert into menu (categoria,sub_categoria,nombre,descripcion,precio,imagen) 
-		values('$cat','$scat','$title','$det','$price','$i')");
-		echo "<script>alert('Registrado correctamente');</script>";
-	}
-	?>
+    </div>            
 </div>
-<?php include "./templates/footer.php"; ?>
+
+
+<?php
+include('templates/footer.php');
+include('templates/scripts.php');
+
+?>
+
+
+        
+
+
