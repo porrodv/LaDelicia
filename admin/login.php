@@ -1,54 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
+	<meta charset="UTF-8">
+	<title></title> 
+	<meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" >
+	<link rel="stylesheet" href="./css/login.css">
+	
 
-    <title>Login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Bootstrap v5.1.3 CDNs -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="./css/login.css">
-
-    <!-- CSS File -->
-    <link rel="stylesheet" href="admin.css">
-
-</head>
-
+</head>  
 <body>
-
-    <div class="login">
-
-        <h4 class="text-center">ADMIN LOGIN</h4>
-        
-        <form action="loginck.php" method="post">
-            <div class="form-group was-validated">
-                <label class="form-label" for="user">Usuario</label>
-                <input class="form-control" type="user" name="user" required>
-                <div class="invalid-feedback">
-                    Por favor ingrese su nombre de usuario
-                </div>
-            </div>
-            <div class="form-group was-validated">
-                <label class="form-label" for="password">Contraseña</label>
-                <input class="form-control" type="password" name="pass" required>
-                <div class="invalid-feedback">
-                    Por favor ingrese su contraseña
-                </div>
-            </div>
-            <input class="btn btn-success w-100" type="submit" name="s" value="Iniciar Sesion">
-        </form>
-
-    </div>
+    <form action="loginck.php" method="post" class="formulario">
+    
+    <h1>Admin Login</h1>
+     <div class="contenedor">
+     
+         <div class="input-contenedor">
+         <i class="fas fa-envelope icon"></i>
+         <input type="text" name="user" placeholder="Usuario">
+         
+         </div>
+         
+         <div class="input-contenedor">
+        <i class="fas fa-key icon"></i>
+         <input type="password" name="pass" placeholder="Contraseña">
+         
+         </div>
+         <input type="submit" name="s" value="Login" class="button">
+     </div>
+     
+    </form>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-

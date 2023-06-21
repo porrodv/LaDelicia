@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 async function getData(url) {
   try {
@@ -11,26 +11,23 @@ async function getData(url) {
   }
 }
 
-async function postData(url, user, pass){
-  const data = {
-    username: user,
-    password: pass,
-  };
-  // console.log("usuario enviado: ", data);
-
+async function postData(url, data) {
   try {
     const response = await fetch(url, {
       method: "POST",
-      headers: {  
+      headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(data),
     });
+    if (response.ok) {
+      console.log('Data posteada correctamente')
+      return true;
+    }
+    return false;
 
-    const result = await response.json();
-    return result;    
   } catch (error) {
-    console.log("Error:", error);
+    throw new Error("Error al enviar la solicitud POST");
   }
 }
 

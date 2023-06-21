@@ -1,12 +1,12 @@
-'use strict';
-import { getData } from "./DataFunctions.js";
+"use strict";
+import { getData, postData } from "./DataFunctions.js";
 
 Promise.all([showMenus()]).then(() => {
   modalActions();
 });
 
 async function showMenus() {
-  const data = await getData("./php/db_get_products.php");
+  let data = await getData("./php/db_get_products.php");
   console.log(data);
 
   const menuSection = document.getElementById("menu");
@@ -14,7 +14,7 @@ async function showMenus() {
 
   data.forEach((menu) => {
     menuContent.innerHTML += `
-    <div class="col-md-4" menu-id-valu="${menu.id}">
+    <div class="col-md-4" menu-id-value="${menu.id}">
         <div class="card mb-5">
             <img src="./admin/${menu.imagen}" class="card-img-top" alt="...">
             <div class="card-body">
@@ -36,7 +36,7 @@ async function showMenus() {
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
 
-                        <form>
+                        <form menu-id-value="${menu.id}">
                             <div class="modal-body">
                                 <article class="row mb-2">
                                     <div class="col-md-12 text-center">
@@ -44,8 +44,8 @@ async function showMenus() {
                                     </div>
                                     <div class="form-group col-md-6">
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="form-names" placeholder="a">
-                                            <label for="form-names">Nombres</label>
+                                            <input type="text" class="form-control" id="form-name" placeholder="a">
+                                            <label for="form-name">Nombre</label>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
@@ -148,16 +148,37 @@ function modalActions() {
     handleButtonClick(btn, false);
   });
 
+  let payButtons = document.querySelectorAll(".btn-buy");
+  payButtons.forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const form = btn.closest("form");
+      const menuID = form.getAttribute('menu-id-value');
+      const dni = form.querySelector("#form-dni").value;
+      const name = form.querySelector("#form-name").value;
+      const phone = form.querySelector("#form-phone").value;
+      const address = form.querySelector("#form-address").value;
+      const quantity = form.querySelector('.span-quantity').textContent; 
+      const total = form.querySelector('.span-total').textContent;
+      console.log(quantity);
 
-  let payButtons = document.querySelectorAll(".btn-pay");
-
-  payButtons.forEach(btn => {
-    console.log(btn);
-    btn.addEventListener('click', ()=>{
-        let form = btn.closest('form');
-        if (a = 1){
-            // terminar
-        }
+      if (dni != "" && name != "" && phone != "" && address != ""){
+          const data = {
+            menuID: menuID,
+            dni: dni,
+            name: name,
+            phone: phone,
+            address: address,
+            quantity: quantity,
+            total: total
+          };
+    
+          let result = await postData("./php/db_post_compra.php", data);
+          if (result){
+            alert("Compra realizada con éxito");
+          }
+          return;
+      }
+      alert('faltan llenar campos');
     });
   });
 }

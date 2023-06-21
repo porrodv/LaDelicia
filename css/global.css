@@ -16,3 +16,47 @@
 	background-color: #333333;
 	border-color: #333333;
 }
+
+
+.encabezado-img{
+	background-image: url('../img/contacto.png');
+	background-size: cover;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+
+.encabezado-img p{
+	font-size: 18px;
+}
+.encabezado-img h1{
+	font-size: 60px;
+	padding: 15px 0;
+	font-family: cursive;
+
+}
+
+
+.encabezado-img2{
+	background-image: url('../img/reservaciones.png');
+	background-size: cover;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: white;
+}
+
+.encabezado-img2 p{
+	font-size: 18px;
+}
+.encabezado-img2 h1{
+	font-size: 60px;
+	padding: 15px 0;
+	font-family: cursive;
+
+}
