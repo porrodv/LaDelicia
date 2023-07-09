@@ -19,7 +19,7 @@
 
 
 .encabezado-img{
-	background-image: url('../img/contacto.png');
+	background-image: url('../img/contacto.jpg');
 	background-size: cover;
 	height: 500px;
 	display: flex;
@@ -41,7 +41,7 @@
 
 
 .encabezado-img2{
-	background-image: url('../img/reservaciones.png');
+	background-image: url('../img/reservaciones-bg.jpg');
 	background-size: cover;
 	height: 500px;
 	display: flex;

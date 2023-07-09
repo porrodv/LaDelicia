@@ -36,7 +36,7 @@ include('templates/header.php');
                                         <tr align=center>
                                             <td><?php echo $r['sub_categoria']; ?></td>
                                             <td><?php echo $r['nombre']; ?></td>
-                                            <td><div style="max-width: 450px;"><?php echo $r['descripcion']; ?></div>
+                                            <td><div style="max-width: 500px;"><?php echo $r['descripcion']; ?></div>
                                             </td>
                                             <td><?php echo $r['precio']; ?></td>
                                             <td><?php echo $r['cantidad']; ?></td>
@@ -44,8 +44,8 @@ include('templates/header.php');
                                                 <img src="<?php echo $r['imagen']; ?>" width=70 height=70>
                                             </td>
                                             <td>
-                                                <a href="delfood.php?a=<?php echo $r['id']; ?>" class="btn btn-outline-danger">Eliminar</a>
-                                                <a href="" class="btn btn-outline-secondary">Editar</a>
+                                                <a href="delfood.php?a=<?php echo $r['id']; ?>" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                                                <a href="editfood.php?b=<?php echo $r['id']; ?>" class="btn btn-sm btn-outline-secondary">Editar</a>
                                             </td>
                                         </tr>	
                                 <?php	

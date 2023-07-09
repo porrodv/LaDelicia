@@ -32,7 +32,7 @@ include('templates/header.php');
         <div class = 'col-md-12'>
             <div class ='card'>
                 <div class = 'card-header'>
-                    <h4>Registro de Comida
+                    <h4>Registro de Producto
                         <a href="view_food.php" class="btn btn-danger float-end">Atras</a>
                     </h4>
             </div>

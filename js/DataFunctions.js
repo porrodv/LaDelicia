@@ -11,6 +11,7 @@ async function getData(url) {
   }
 }
 
+// se puede mejorar bastante las excepciones al usuario
 async function postData(url, data) {
   try {
     const response = await fetch(url, {
@@ -21,11 +22,13 @@ async function postData(url, data) {
       body: JSON.stringify(data),
     });
     if (response.ok) {
-      console.log('Data posteada correctamente')
-      return true;
+      console.log('Data posteada correctamente');
+      return { success: true, message: 'Compra realizada con éxito' };
+    } else {
+      const errorMessage = await response.text();
+      console.log('Error interno: ' + errorMessage);
+      return { success: false, message: errorMessage };
     }
-    return false;
-
   } catch (error) {
     throw new Error("Error al enviar la solicitud POST");
   }

@@ -26,7 +26,7 @@ include('templates/header.php');
                                     </tr>
                                 </thead>
 
-<!-- CONEXION A LA BASE DE DATOS -->
+                            <!-- CONEXION A LA BASE DE DATOS -->
                             <?php 
                                 $s = mysqli_query($con,"SELECT * FROM cat_food");
                                 while($r = mysqli_fetch_array($s))
@@ -36,7 +36,12 @@ include('templates/header.php');
                                         <td><?php echo $r['id']; ?></td>
                                         <td><?php echo $r['categoria']; ?></td>
                                         <td><?php echo $r['sub_categoria']; ?></td>
-                                        <td><a href="delcategory.php?a=<?php echo $r['id']; ?>" class="btn btn-outline-danger">Eliminar</a></td>
+                                        <td>
+                                            <div class="d-flex gap-2">
+                                                <a href="delcategory.php?a=<?php echo $r['id']; ?>" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                                                <a href="editcat.php?b=<?php echo $r['id']; ?>" class="btn btn-sm btn-outline-secondary">Editar</a>
+                                            </div>
+                                        </td>
                                     </tr>	
                             <?php	
                                 }

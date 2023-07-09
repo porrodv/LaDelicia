@@ -7,9 +7,10 @@
         $hor=$_POST['hora'];
         $per=$_POST['person'];
         $des=$_POST['mess'];
+
         include "admin/connect.php";
-        mysqli_query($con, "insert into reservaciones (nombre, email, telefono, fecha, hora, persona, mensaje) 
-        values ('$nm', '$em', '$telf', '$fech', '$hor', '$per', '$des' )");
+        mysqli_query($con, "INSERT INTO reservaciones (nombre, email, telefono, fecha, hora, persona, mensaje) VALUES ('$nm', '$em', '$telf', '$fech', '$hor', '$per', '$des' )");
+        
         echo "<script>alert('Enviado correctamente');</script>";
         include "contact_us.html";
     }

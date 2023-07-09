@@ -50,13 +50,13 @@ async function showMenus() {
                                     </div>
                                     <div class="form-group col-md-6">
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="form-dni" placeholder="a">
+                                            <input type="text" class="form-control" id="form-dni" placeholder="a" maxlength="8">
                                             <label for="form-dni">DNI</label>
                                         </div>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="form-phone" placeholder="a">
+                                            <input type="text" class="form-control" id="form-phone" placeholder="a" maxlength="9">
                                             <label for="form-phone">Teléfono</label>
                                         </div>
                                     </div>
@@ -152,33 +152,43 @@ function modalActions() {
   payButtons.forEach((btn) => {
     btn.addEventListener("click", async () => {
       const form = btn.closest("form");
-      const menuID = form.getAttribute('menu-id-value');
+      const menuID = form.getAttribute("menu-id-value");
       const dni = form.querySelector("#form-dni").value;
       const name = form.querySelector("#form-name").value;
       const phone = form.querySelector("#form-phone").value;
       const address = form.querySelector("#form-address").value;
-      const quantity = form.querySelector('.span-quantity').textContent; 
-      const total = form.querySelector('.span-total').textContent;
-      console.log(quantity);
+      const quantity = form.querySelector(".span-quantity").textContent;
+      const total = form.querySelector(".span-total").textContent;
 
-      if (dni != "" && name != "" && phone != "" && address != ""){
-          const data = {
-            menuID: menuID,
-            dni: dni,
-            name: name,
-            phone: phone,
-            address: address,
-            quantity: quantity,
-            total: total
-          };
-    
+      if (
+        dni != "" &&
+        dni.length === 8 &&
+        phone != "" &&
+        phone.length === 9 &&
+        name != "" &&
+        address != ""
+      ) {        
+        const data = {
+          menuID: menuID,
+          dni: dni,
+          name: name,
+          phone: phone,
+          address: address,
+          quantity: quantity,
+          total: total,
+        };
+
+        try {
           let result = await postData("./php/db_post_compra.php", data);
-          if (result){
-            alert("Compra realizada con éxito");
-          }
-          return;
+          alert(result.message);
+        } catch (error) {
+          console.error(error);
+          alert("Error al realizar la compra");
+        }
+
+      } else {
+        alert("Por favor, complete todos los campos.");
       }
-      alert('faltan llenar campos');
     });
   });
 }
