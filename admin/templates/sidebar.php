@@ -20,7 +20,15 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-scroll"></i></div>
                     Categoria
                 </a>
+                <a class="nav-link" href="pedidos.php">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-basket-shopping"></i></div>
+                    Pedidos
+                </a>
                 <div class="sb-sidenav-menu-heading">Clientes</div>
+                <a class="nav-link" href="clients.php">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-users"></i></div>
+                    Clientes
+                </a>
                 <a class="nav-link" href="messages.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div>
                     Mensajes
