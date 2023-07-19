@@ -44,7 +44,7 @@ include('templates/header.php');
                     <td>
                         <div style="max-width: 380px"><?php echo $r['mensaje']; ?></div>
                     </td>
-                    <td><a href="delreview.php?a=<?php echo $r['id']; ?>" class="btn btn-outline-danger">Eliminar</a></td>
+                    <td><a href="delreservation.php?a=<?php echo $r['id']; ?>" class="btn btn-outline-danger">Eliminar</a></td>
                     </tr>	
                     <?php	
                     }

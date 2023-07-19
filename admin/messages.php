@@ -33,7 +33,7 @@ include('templates/header.php');
                         <td><?php echo $r['nombre']; ?></td>
                         <td><?php echo $r['email']; ?></td>
                         <td><?php echo $r['mensaje']; ?></td>
-                        <td><a href="delreview.php?a=<?php echo $r['id']; ?>" class="btn btn-outline-danger">Eliminar</a></td>
+                        <td><a href="delmessages.php?a=<?php echo $r['id']; ?>" class="btn btn-outline-danger">Eliminar</a></td>
                     </tr>	
                     <?php	
                     }
